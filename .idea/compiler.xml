@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <wildcardResourcePatterns>
+      <entry name="!?*.xml" />
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eureka-server" />
+        <module name="seckill-cache" />
+        <module name="seckill-common" />
+        <module name="seckill-mq" />
+        <module name="seckill-order" />
+        <module name="seckill-product" />
+        <module name="seckill-service" />
+        <module name="seckill-user" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eureka-server" target="1.8" />
+      <module name="seckill" target="1.8" />
+      <module name="seckill-cache" target="1.8" />
+      <module name="seckill-common" target="1.8" />
+      <module name="seckill-mq" target="1.8" />
+      <module name="seckill-order" target="1.8" />
+      <module name="seckill-product" target="1.8" />
+      <module name="seckill-service" target="1.8" />
+      <module name="seckill-user" target="1.8" />
+      <module name="tx-lcn" target="1.8" />
+      <module name="txlcn-common" target="1.8" />
+      <module name="txlcn-logger" target="1.8" />
+      <module name="txlcn-tc" target="1.8" />
+      <module name="txlcn-tm" target="1.8" />
+      <module name="txlcn-tracing" target="1.8" />
+      <module name="txlcn-txmsg" target="1.8" />
+      <module name="txlcn-txmsg-netty" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

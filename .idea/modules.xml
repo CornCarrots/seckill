@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seckill.iml" filepath="$PROJECT_DIR$/seckill.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seckill-cache/seckill-cache.iml" filepath="$PROJECT_DIR$/seckill-cache/seckill-cache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seckill-common/seckill-common.iml" filepath="$PROJECT_DIR$/seckill-common/seckill-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seckill-mq/seckill-mq.iml" filepath="$PROJECT_DIR$/seckill-mq/seckill-mq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seckill-order/seckill-order.iml" filepath="$PROJECT_DIR$/seckill-order/seckill-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seckill-product/seckill-product.iml" filepath="$PROJECT_DIR$/seckill-product/seckill-product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seckill-service/seckill-service.iml" filepath="$PROJECT_DIR$/seckill-service/seckill-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seckill-user/seckill-user.iml" filepath="$PROJECT_DIR$/seckill-user/seckill-user.iml" />
+    </modules>
+  </component>
+</project>

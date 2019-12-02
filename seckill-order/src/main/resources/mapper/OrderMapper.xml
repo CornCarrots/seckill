@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lh.seckill.dao.OrderMapper">
+    <resultMap id="Order" type="com.lh.seckill.dao.po.Order">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <id column="uid" jdbcType="BIGINT" property="uid" />
+        <result column="status" jdbcType="VARCHAR" property="status" />
+        <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    </resultMap>
+    <resultMap id="OrderItem" type="com.lh.seckill.dao.po.OrderItem">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <id column="oid" jdbcType="BIGINT" property="oid" />
+        <id column="uid" jdbcType="BIGINT" property="uid" />
+        <id column="pid" jdbcType="BIGINT" property="pid" />
+        <id column="sum" jdbcType="INTEGER" property="sum" />
+    </resultMap>
+    <select id="getOrder" resultMap="Order">
+      SELECT o.*
+      FROM `order` o
+      WHERE o.id = #{id}
+    </select>
+    <select id="getOrderItem" resultMap="OrderItem">
+      SELECT o.*
+      FROM order_item o
+      WHERE o.uid = #{uid} AND o.pid = #{pid}
+    </select>
+    <insert id="createOrder" useGeneratedKeys="true" keyProperty="order.id" parameterType="com.lh.seckill.dao.po.Order">
+        insert into `order`
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="order.uid != null">
+                uid,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="order.uid != null">
+                #{order.uid},
+            </if>
+        </trim>
+    </insert>
+    <insert id="createOrderItem">
+        insert into `order_item`
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="uid != null">
+                uid,
+            </if>
+            <if test="pid != null">
+                pid,
+            </if>
+            <if test="oid != null">
+                oid,
+            </if>
+            <if test="sum != null">
+                `sum`,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="uid != null">
+                #{uid},
+            </if>
+            <if test="pid != null">
+                #{pid},
+            </if>
+            <if test="oid != null">
+                #{oid},
+            </if>
+            <if test="sum != null">
+                #{sum},
+            </if>
+        </trim>
+    </insert>
+
+</mapper>

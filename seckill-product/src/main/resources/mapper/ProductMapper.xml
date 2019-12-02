@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lh.seckill.dao.ProductMapper">
+    <resultMap id="Product" type="com.lh.seckill.dao.po.Product">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="title" jdbcType="VARCHAR" property="title" />
+        <result column="summary" jdbcType="VARCHAR" property="summary" />
+        <result column="stock" jdbcType="INTEGER" property="stock" />
+        <result column="price" jdbcType="DOUBLE" property="price" />
+    </resultMap>
+    <resultMap id="SeckillProduct" type="com.lh.seckill.dao.po.SeckillProduct">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <id column="pid" jdbcType="BIGINT" property="pid" />
+        <result column="kill_price" jdbcType="DOUBLE" property="killPrice" />
+        <result column="kill_stock" jdbcType="INTEGER" property="killStock" />
+        <result column="start_date" jdbcType="TIMESTAMP" property="startDate" />
+        <result column="end_date" jdbcType="TIMESTAMP" property="endDate" />
+    </resultMap>
+    <select id="listProduct" resultMap="Product">
+      SELECT p.*
+      FROM product p
+    </select>
+    <select id="listSeckillProduct" resultMap="SeckillProduct">
+      SELECT sp.*
+      FROM seckill_product sp
+    </select>
+    <select id="getProduct" resultMap="Product">
+      SELECT p.*
+      FROM product p
+      WHERE p.id = #{pid}
+    </select>
+    <select id="getSeckillProduct" resultMap="SeckillProduct">
+      SELECT sp.*
+      FROM seckill_product sp
+      WHERE sp.id = #{spid}
+    </select>
+    <select id="getSeckillProductByPid" resultMap="SeckillProduct">
+      SELECT sp.*
+      FROM seckill_product sp
+      WHERE sp.pid = #{pid}
+    </select>
+    <update id="reduceStock">
+        UPDATE seckill_product
+        SET kill_stock = kill_stock - ${sum}
+        WHERE pid = #{pid} AND kill_stock > ${sum}
+    </update>
+
+</mapper>

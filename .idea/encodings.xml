@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seckill-cache" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seckill-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seckill-mq" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seckill-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seckill-product" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seckill-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seckill-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../tx-lcn" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../tx-lcn/txlcn-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../tx-lcn/txlcn-logger" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../tx-lcn/txlcn-tc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../tx-lcn/txlcn-tm" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../tx-lcn/txlcn-tracing" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../tx-lcn/txlcn-txmsg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../tx-lcn/txlcn-txmsg-netty" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lh.seckill.dao.UserMapper">
+    <resultMap id="User" type="com.lh.seckill.dao.po.User">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="salt" jdbcType="VARCHAR" property="salt"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="register_date" jdbcType="TIMESTAMP" property="registerDate"/>
+        <result column="login_date" jdbcType="TIMESTAMP" property="loginDate"/>
+    </resultMap>
+    <insert id="insert">
+        insert into `user`
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="phone != null">
+                phone,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="salt != null">
+                salt,
+            </if>
+            <if test="address != null">
+                address,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="phone != null">
+                #{phone},
+            </if>
+            <if test="password != null">
+                #{password},
+            </if>
+            <if test="salt != null">
+                #{salt},
+            </if>
+            <if test="address != null">
+                #{address},
+            </if>
+        </trim>
+    </insert>
+    <update id="update">
+        UPDATE `user`
+        SET password = #{password}
+        WHERE uid = #{uid}
+    </update>
+    <select id="getByPhone" resultMap="User">
+      SELECT u.*
+      FROM `user` u
+      WHERE u.phone = #{phone}
+    </select>
+    <select id="getById" resultMap="User">
+      SELECT u.*
+      FROM `user` u
+      WHERE u.id = #{uid}
+    </select>
+</mapper>
